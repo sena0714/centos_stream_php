@@ -5,6 +5,9 @@ RUN yum -y update && yum clean all
 # Install Apache
 RUN yum -y install httpd && systemctl enable httpd
 
+# Start php-fpm
+COPY ./docker/config/php-fpm/www.conf /etc/php-fpm.d/www.conf
+
 # Install SSL
 RUN yum -y install mod_ssl openssl
 WORKDIR /etc/pki/tls/certs

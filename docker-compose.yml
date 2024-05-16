@@ -18,6 +18,7 @@ services:
       - ./docker/config/apache/ssl.conf:/etc/httpd/conf.d/ssl.conf
       - ./docker/config/php/php.ini:/etc/php.ini
       - ./docker/config/centos/centos.repo:/etc/yum.repos.d/centos.repo
+      - ./docker/config/php-fpm/www.conf:/etc/php-fpm.d/www.conf
     networks:
       - backend
     privileged: true
